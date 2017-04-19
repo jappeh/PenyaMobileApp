@@ -21,14 +21,19 @@
     </div>
     <ion-card-content>
       <ion-card-title>
-        <div [innerHTML]="item.title.rendered"></div>
+        <h2 class="news_list_item_title" [innerHTML]="item.title.rendered"></h2>
       </ion-card-title>
     </ion-card-content>
-    <ion-row>
+    <ion-row no-padding>
       <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='chatbubbles'></ion-icon> 10 REACTIES <span></span>
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="primary" icon-left>
+          <ion-icon name='share-alt'></ion-icon>
+          Share
         </button>
       </ion-col>
     </ion-row>

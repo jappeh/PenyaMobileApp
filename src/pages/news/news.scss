@@ -6,3 +6,29 @@
   display: block;
   width: 100%;
 }
+
+.news .item.item-block .item-inner {
+  padding-right: 0;
+}
+
+.news .item {
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.news .label {
+  margin: 0;
+}
+
+.news .card-title-md {
+  font-size: 1.2em;
+}
+
+.news .card-title h2 {
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+.news .card-content {
+  padding-bottom: 0;
+}
