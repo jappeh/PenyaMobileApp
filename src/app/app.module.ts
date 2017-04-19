@@ -12,13 +12,15 @@ import { NewsPage } from "../pages/news/news";
 import {HttpModule} from "@angular/http";
 
 import {IonicStorageModule} from "../../node_modules/@ionic/storage/es2015/index";
+import {NewsDetail} from "../pages/news-detail/news-detail";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    NewsPage
+    NewsPage,
+    NewsDetail
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {IonicStorageModule} from "../../node_modules/@ionic/storage/es2015/index
     MyApp,
     HomePage,
     ListPage,
-    NewsPage
+    NewsPage,
+    NewsDetail
   ],
   providers: [
     StatusBar,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {NewsDetail} from "../news-detail/news-detail";
 
 @Component({
   selector: 'page-news',
@@ -23,6 +24,12 @@ export class NewsPage {
         // and save the data for later reference
         this.items = data;
       });
+  }
+
+  itemTapped(event, item) {
+    this.navCtrl.push(NewsDetail, {
+      item: item
+    });
   }
 
 }
