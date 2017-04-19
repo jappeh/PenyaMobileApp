@@ -16,6 +16,17 @@
 
 <ion-content padding class="news">
   <ion-list>
+    <ion-card ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-card-header>
+        <div [innerHTML]="item.featured_media"></div>
+      </ion-card-header>
+
+      <ion-card-content>
+      <ion-item>
+        <div [innerHTML]="item.title.rendered"></div>
+      </ion-item>
+        </ion-card-content>
+    </ion-card>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <h2 [innerHTML]="item.title.rendered"></h2>
       <p [innerHTML]="item.excerpt.rendered"></p>
