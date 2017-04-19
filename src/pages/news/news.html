@@ -15,21 +15,23 @@
 
 
 <ion-content padding class="news">
-  <ion-list>
-    <ion-card ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-card-header>
-        <div [innerHTML]="item.featured_media"></div>
-      </ion-card-header>
-
-      <ion-card-content>
-      <ion-item>
+  <ion-card ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <div *ngIf="item.better_featured_image">
+      <img  class="newsimg" [src]="item.better_featured_image.media_details.sizes.medium.source_url" alt="item.better_featured_image.alt_text"/>
+    </div>
+    <ion-card-content>
+      <ion-card-title>
         <div [innerHTML]="item.title.rendered"></div>
-      </ion-item>
-        </ion-card-content>
-    </ion-card>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <h2 [innerHTML]="item.title.rendered"></h2>
-      <p [innerHTML]="item.excerpt.rendered"></p>
-    </button>
-  </ion-list>
+      </ion-card-title>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
 </ion-content>
