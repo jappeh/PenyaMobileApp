@@ -19,6 +19,10 @@ export class NewsService {
     return this.http.get( 'http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts?page='+page)
       .map(res => res.json());
   }
+  searchNews(search:string){
+    return this.http.get( "http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts?search='"+search+"'")
+      .map(res => res.json());
+  }
 
 
 }

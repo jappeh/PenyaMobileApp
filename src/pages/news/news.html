@@ -9,22 +9,32 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+
     <ion-title>Nieuws</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding class="news">
+
+  <ion-searchbar
+    placeholder="Zoeken..."
+    [(ngModel)]="searchInput"
+    (search)="searchNews($event)"
+    (ionClear)="resetNews()">
+  </ion-searchbar>
   <ion-card class="nopadding"ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
     <div *ngIf="item.better_featured_image">
       <img  class="newsimg" [src]="item.better_featured_image.media_details.sizes.medium.source_url" alt="item.better_featured_image.alt_text"/>
     </div>
     <ion-card-content>
       <ion-card-title>
-        <div *ngIf="item.better_featured_image">
+        <div *ngIf="item.title">
           <h2 class="news_list_item_title" [innerHTML]="item.title.rendered"></h2>
         </div>
+        <span class="dateSpan">{{item.date | date: 'd MMMM y'}}</span>
       </ion-card-title>
+      <p [innerHTML]="item.excerpt.rendered"> </p>
     </ion-card-content>
     <ion-row no-padding>
       <ion-col>
@@ -40,7 +50,7 @@
       </ion-col>
     </ion-row>
   </ion-card>
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+  <ion-infinite-scroll *ngIf="!searchBool" (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

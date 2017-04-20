@@ -15,6 +15,18 @@
   padding: 0;
   margin-bottom: 16px;
 }
+.news p{
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+  overflow:hidden;
+  height: 50px;
+
+}
+
+.dateSpan {
+  color: #999;
+  font-size: 0.75em;
+}
 
 .news .label {
   margin: 0;
@@ -31,4 +43,9 @@
 
 .news .card-content {
   padding-bottom: 0;
+}
+.news .searchbar{
+  padding: 0;
+  margin-bottom: 16px;
+  background: transparent;
 }
