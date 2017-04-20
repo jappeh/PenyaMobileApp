@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {NewsService} from "../../providers/wp.service";
 import {NewsDetail} from "../news-detail/news-detail";
+import {Post} from "../../DTO/post";
 
 @Component({
   selector: 'page-news',
@@ -12,7 +13,7 @@ import {NewsDetail} from "../news-detail/news-detail";
 })
 export class NewsPage {
   counter:number;
-  items: any[];
+  items: Post[]=null;
   searchInput:string ="";
   searchBool:boolean = false;
 

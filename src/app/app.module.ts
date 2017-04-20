@@ -19,8 +19,6 @@ import {SocialSharing} from "@ionic-native/social-sharing";
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ListPage,
     NewsPage,
     NewsDetail
   ],
@@ -33,8 +31,6 @@ import {SocialSharing} from "@ionic-native/social-sharing";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ListPage,
     NewsPage,
     NewsDetail
   ],

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Observable} from "rxjs/Observable";
+import {Post} from "../DTO/post";
 
 /*
   Generated class for the NewsProvider provider.
@@ -10,12 +12,11 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class NewsService {
-  items: any;
   constructor(public http: Http) {
 
   }
 
-  getNews(page:number){
+  getNews(page:number): Observable<Post[]>{
     return this.http.get( 'http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts?page='+page)
       .map(res => res.json());
   }
@@ -23,6 +24,8 @@ export class NewsService {
     return this.http.get( "http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts?search='"+search+"'")
       .map(res => res.json());
   }
-
-
+  getComments(postId:number){
+    return this.http.get( "http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/comments?post="+postId)
+      .map(res => res.json());
+  }
 }
