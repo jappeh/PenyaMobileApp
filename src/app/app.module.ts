@@ -13,6 +13,8 @@ import {HttpModule} from "@angular/http";
 
 import {IonicStorageModule} from "../../node_modules/@ionic/storage/es2015/index";
 import {NewsDetail} from "../pages/news-detail/news-detail";
+import {Toast} from "@ionic-native/toast";
+import {SocialSharing} from "@ionic-native/social-sharing";
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import {NewsDetail} from "../pages/news-detail/news-detail";
   providers: [
     StatusBar,
     SplashScreen,
+    Toast,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
