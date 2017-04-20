@@ -14,8 +14,9 @@ export class NewsService {
   constructor(public http: Http) {
 
   }
-  getNews(){
-    return this.http.get( 'http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts' )
+
+  getNews(page:number){
+    return this.http.get( 'http://www.fanatiek-fcbarcelona.be/wp-json/wp/v2/posts?page='+page)
       .map(res => res.json());
   }
 

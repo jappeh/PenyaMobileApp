@@ -21,7 +21,9 @@
     </div>
     <ion-card-content>
       <ion-card-title>
-        <h2 class="news_list_item_title" [innerHTML]="item.title.rendered"></h2>
+        <div *ngIf="item.better_featured_image">
+          <h2 class="news_list_item_title" [innerHTML]="item.title.rendered"></h2>
+        </div>
       </ion-card-title>
     </ion-card-content>
     <ion-row no-padding>
@@ -38,5 +40,7 @@
       </ion-col>
     </ion-row>
   </ion-card>
-
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
