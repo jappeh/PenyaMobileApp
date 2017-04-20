@@ -23,7 +23,7 @@ export class NewsPage {
   }
   doInfinite(infiniteScroll){
     setTimeout(()=>{
-      this.newsService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data))
+      this.newsService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data));
       this.counter++;
       console.log(this.items);
     },500);

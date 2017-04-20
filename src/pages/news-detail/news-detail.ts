@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import DateTimeFormat = Intl.DateTimeFormat;
 
 /**
  * Generated class for the NewsDetail page.
@@ -14,13 +15,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsDetail {
   selectedItem: any;
+  itemContent: any;
+  itemDate:Date;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
+    this.itemContent = this.selectedItem.content.rendered.replace(/<img[^>]*>/g,"");
+    //this.itemDate.(this.selectedItem.date, 'pt', 'dd/MM/yyyy');
+    this.itemDate = this.selectedItem.date;
+
   }
-
-
-
-
 }

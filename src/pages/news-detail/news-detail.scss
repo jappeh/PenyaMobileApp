@@ -1,3 +1,27 @@
 page-news-detail {
 
 }
+
+.news_img_box {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news_content_box {
+  padding: 0 15px 15px 15px;
+}
+
+.news_content_box p {
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+.news_detail_page .news_detail_page_img {
+  width: 100%;
+}
+
+.news_content_box span {
+  color: #999;
+  size: 0.75em;
+}

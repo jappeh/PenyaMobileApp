@@ -12,9 +12,28 @@
 
 </ion-header>
 
-<ion-content padding>
-  <div *ngIf="selectedItem" class="selection">
+<ion-content >
+  <div *ngIf="selectedItem" class="selection news_detail_page">
+    <div class="news_img_box">
+      <img class="news_detail_page_img" [src]="selectedItem.better_featured_image.media_details.sizes.medium.source_url"/>
+    </div>
+    <div class="news_content_box">
     <h2 [innerHTML]="selectedItem.title.rendered"></h2>
-    <div [innerHTML]="selectedItem.content.rendered"></div>
+    <span>{{itemDate | date: 'd MMMM y'}}</span>
+    <p [innerHTML]="itemContent"></p>
+    </div>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-right >
+        <ion-icon name="bookmark"></ion-icon>
+      </button>
+      <button ion-button icon-right>
+        <ion-icon name="share-alt"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
