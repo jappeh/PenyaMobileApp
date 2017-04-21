@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GameService} from "../../providers/game-service";
+import {DateFilterPipe} from "../../pipes/dateFilterPipe";
 
 /**
  * Generated class for the CalendarPage page.
@@ -21,7 +22,9 @@ export class CalendarPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
-    this.gameService.getGames().subscribe(data => this.games = data);
+    this.gameService.getGames().subscribe(data =>
+      this.games = data
+    );
   }
 
 

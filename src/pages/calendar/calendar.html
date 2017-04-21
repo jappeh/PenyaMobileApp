@@ -18,7 +18,7 @@
 
 
 <ion-content padding class="calendar">
-  <ion-card *ngFor="let game of games" (click)="gameSelected(game)">
+  <ion-card *ngFor="let game of games | dateFilterPipe:'past'" (click)="gameSelected(game)">
     <ion-grid>
       <ion-row>
         <ion-col col-3 *ngIf="game.isHomeGame">
@@ -31,7 +31,7 @@
         </ion-col>
         <ion-col col-6 >
           <p class="league">{{game.gameCategory}}</p>
-          <p class="date">{{game.date | date:'dd MMMM'}}</p>
+          <p class="date">{{game.date | date:'dd MMM'}}</p>
           <p class="hour">{{game.beginTime}}</p>
         </ion-col>
         <ion-col col-3 *ngIf="!game.isHomeGame">
@@ -46,17 +46,4 @@
     </ion-grid>
   </ion-card>
 
-
-<!--  <ion-list>
-    <ion-item *ngFor="let game of games" (click)="gameSelected(game)">
-      <ion-thumbnail item-left>
-        <img src="/assets/icon/favicon.ico">
-      </ion-thumbnail>
-      <ion-thumbnail item-right>
-        <img src="/assets/icon/favicon.ico">
-      </ion-thumbnail>
-      <h2>{{game.date | date:'dd MMMM'}}</h2>
-      <p >Hayao Miyazaki • 1988</p>
-    </ion-item>
-  </ion-list>-->
 </ion-content>

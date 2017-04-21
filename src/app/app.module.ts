@@ -15,13 +15,15 @@ import {Toast} from "@ionic-native/toast";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {Keyboard} from "@ionic-native/keyboard";
 import {CalendarPage} from "../pages/calendar/calendar";
+import {DateFilterPipe} from "../pipes/dateFilterPipe";
 
 @NgModule({
   declarations: [
     MyApp,
     NewsPage,
     NewsDetail,
-    CalendarPage
+    CalendarPage,
+    DateFilterPipe
   ],
   imports: [
     BrowserModule,
