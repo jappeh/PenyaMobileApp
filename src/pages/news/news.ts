@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {NewsService} from "../../providers/wp.service";
 import {NewsDetail} from "../news-detail/news-detail";
 import {Post} from "../../DTO/post";
+import {Keyboard} from "@ionic-native/keyboard";
 
 @Component({
   selector: 'page-news',
@@ -17,13 +18,14 @@ export class NewsPage {
   searchInput:string ="";
   searchBool:boolean = false;
 
-  constructor(public navCtrl: NavController, public newsService:NewsService) {
-    this.resetNews()
+  constructor(public navCtrl: NavController, public newsService:NewsService, private keyboard:Keyboard) {
+    this.resetNews();
+    this.keyboard.hideKeyboardAccessoryBar(false);
   }
 
   doInfinite(infiniteScroll){
     setTimeout(()=>{
-      this.newsService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data))
+      this.newsService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data));
       this.counter++;
       console.log(this.items);
     },500);
@@ -37,19 +39,23 @@ export class NewsPage {
       item: item
     });
   }
+
   searchNews(event){
-    console.log(this.searchInput)
+    console.log(this.searchInput);
     if(this.searchInput!=""){
       this.searchBool = true;
       this.newsService.searchNews(this.searchInput).subscribe(data => this.items = data)
     }else {
       this.resetNews();
     }
+    this.keyboard.close();
   }
+
   resetNews(){
     this.counter=1;
     this.newsService.getNews(this.counter).subscribe(data => this.items = data);
     this.counter++;
+    this.keyboard.close();
   }
 
 }
