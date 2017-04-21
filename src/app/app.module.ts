@@ -14,12 +14,14 @@ import {NewsDetail} from "../pages/news-detail/news-detail";
 import {Toast} from "@ionic-native/toast";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {Keyboard} from "@ionic-native/keyboard";
+import {CalendarPage} from "../pages/calendar/calendar";
 
 @NgModule({
   declarations: [
     MyApp,
     NewsPage,
-    NewsDetail
+    NewsDetail,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import {Keyboard} from "@ionic-native/keyboard";
   entryComponents: [
     MyApp,
     NewsPage,
-    NewsDetail
+    NewsDetail,
+    CalendarPage
   ],
   providers: [
     StatusBar,

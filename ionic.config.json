@@ -2,5 +2,11 @@
   "name": "PenyaMobileApp",
   "app_id": "c92a391e",
   "v2": true,
-  "typescript": true
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "",
+      "proxyUrl": "http://localhost:4200/"
+    }
+  ]
 }

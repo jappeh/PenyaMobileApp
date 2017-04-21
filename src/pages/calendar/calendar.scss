@@ -1,0 +1,34 @@
+.calendar{
+  background: #f3F3F3;
+}
+.calendar .scroll-content{
+  padding: 5px;
+}
+.calendar p{
+  width:100%;
+  text-align: center;
+  line-height: 1;
+}
+.calendar .league{
+  margin-top: 0px;
+  margin-bottom:5px;
+  color: #888;
+}
+.calendar .date{
+  font-size: 2em;
+  margin-top: 10px;
+  margin-bottom:5px;
+  font-weight: 500;
+}
+.calendar .hour{
+  font-size: 1.5em;
+  margin-top: 0;
+}
+.calendar .teamname{
+  font-size: 0.75em;
+}
+.calendar .card{
+  margin: 0;
+  margin-bottom: 5px;
+  width: 100%;
+}

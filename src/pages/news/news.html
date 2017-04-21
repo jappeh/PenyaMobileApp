@@ -23,7 +23,7 @@
     (search)="searchNews($event)"
     (ionCancel)="resetNews($event)">
   </ion-searchbar>
-  <ion-card class="nopadding"ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+  <ion-card class="nopadding" ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
     <div *ngIf="item.better_featured_image">
       <img  class="newsimg" [src]="item.better_featured_image.media_details.sizes.medium.source_url" alt="item.better_featured_image.alt_text"/>
     </div>
