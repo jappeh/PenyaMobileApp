@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, Searchbar} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {NewsService} from "../../providers/wp.service";
 import {NewsDetail} from "../news-detail/news-detail";
@@ -20,7 +20,7 @@ export class NewsPage {
 
   constructor(public navCtrl: NavController, public newsService:NewsService, private keyboard:Keyboard) {
     this.resetNews();
-    this.keyboard.hideKeyboardAccessoryBar(false);
+    keyboard.disableScroll(false);
   }
 
   doInfinite(infiniteScroll){
@@ -55,6 +55,11 @@ export class NewsPage {
     this.counter=1;
     this.newsService.getNews(this.counter).subscribe(data => this.items = data);
     this.counter++;
+    this.keyboard.close();
+
+  }
+
+  closeKB(){
     this.keyboard.close();
   }
 
