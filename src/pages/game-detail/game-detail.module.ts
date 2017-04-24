@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {IonicModule, IonicPage, IonicPageModule} from 'ionic-angular';
+import {IonicPageModule} from 'ionic-angular';
 import { GameDetail } from './game-detail';
 
 @NgModule({

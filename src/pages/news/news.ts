@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, Searchbar} from 'ionic-angular';
+import {NavController} from 'ionic-angular';
 import 'rxjs/add/operator/map';
 import {WPService} from "../../providers/wp.service";
 import {NewsDetail} from "../news-detail/news-detail";
