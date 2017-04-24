@@ -17,6 +17,7 @@ import {Keyboard} from "@ionic-native/keyboard";
 import {CalendarPage} from "../pages/calendar/calendar";
 import {DateFilterPipe} from "../pipes/dateFilterPipe";
 import {GameDetail} from "../pages/game-detail/game-detail";
+import {BookmarkPage} from "../pages/bookmark/bookmark";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {GameDetail} from "../pages/game-detail/game-detail";
     NewsDetail,
     CalendarPage,
     DateFilterPipe,
-    GameDetail
+    GameDetail,
+    BookmarkPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import {GameDetail} from "../pages/game-detail/game-detail";
     NewsPage,
     NewsDetail,
     CalendarPage,
-    GameDetail
+    GameDetail,
+    BookmarkPage
   ],
   providers: [
     StatusBar,
