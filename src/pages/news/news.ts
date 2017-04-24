@@ -56,10 +56,13 @@ export class NewsPage {
     this.wpService.getNews(this.counter).subscribe(data => this.items = data);
     this.counter++;
     this.keyboard.close();
+
   }
 
   closeKB(){
     this.keyboard.close();
   }
+
+
 
 }
