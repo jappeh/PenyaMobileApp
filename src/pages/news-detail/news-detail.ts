@@ -4,6 +4,7 @@ import {IonicPage, NavController, NavParams, Platform} from "ionic-angular";
 
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {Toast} from "@ionic-native/toast";
+import {WPService} from "../../providers/wp.service";
 
 /**
  * Generated class for the NewsDetail page.
@@ -15,20 +16,22 @@ import {Toast} from "@ionic-native/toast";
 @Component({
   selector: 'page-news-detail',
   templateUrl: 'news-detail.html',
+  providers:[WPService]
 })
 export class NewsDetail {
   selectedItem: any;
   itemContent: any;
   itemDate: Date;
+  comments:any[]=null;
 
 
-  constructor(private p: Platform, private toast: Toast,private socialSharing: SocialSharing, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private p: Platform, private toast: Toast,private socialSharing: SocialSharing, public navCtrl: NavController, public navParams: NavParams, private wpService:WPService) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
     this.itemContent = this.selectedItem.content.rendered.replace(/<img[^>]*>/g, "");
     //this.itemDate.(this.selectedItem.date, 'pt', 'dd/MM/yyyy');
     this.itemDate = this.selectedItem.date;
-
+    this.wpService.getComments(this.selectedItem.id).subscribe(data => this.comments = data)
   }
 
   share() {

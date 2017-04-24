@@ -11,7 +11,7 @@ import {Post} from "../DTO/post";
   for more info on providers and Angular 2 DI.
 */
 @Injectable()
-export class NewsService {
+export class WPService {
   constructor(public http: Http) {
 
   }

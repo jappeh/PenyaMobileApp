@@ -16,6 +16,7 @@ import {SocialSharing} from "@ionic-native/social-sharing";
 import {Keyboard} from "@ionic-native/keyboard";
 import {CalendarPage} from "../pages/calendar/calendar";
 import {DateFilterPipe} from "../pipes/dateFilterPipe";
+import {GameDetail} from "../pages/game-detail/game-detail";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {DateFilterPipe} from "../pipes/dateFilterPipe";
     NewsPage,
     NewsDetail,
     CalendarPage,
-    DateFilterPipe
+    DateFilterPipe,
+    GameDetail
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import {DateFilterPipe} from "../pipes/dateFilterPipe";
     MyApp,
     NewsPage,
     NewsDetail,
-    CalendarPage
+    CalendarPage,
+    GameDetail
   ],
   providers: [
     StatusBar,

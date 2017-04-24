@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, Searchbar} from 'ionic-angular';
 import 'rxjs/add/operator/map';
-import {NewsService} from "../../providers/wp.service";
+import {WPService} from "../../providers/wp.service";
 import {NewsDetail} from "../news-detail/news-detail";
 import {Post} from "../../DTO/post";
 import {Keyboard} from "@ionic-native/keyboard";
@@ -10,7 +10,7 @@ import {Keyboard} from "@ionic-native/keyboard";
   selector: 'page-news',
   templateUrl: 'news.html',
 
-  providers:[NewsService]
+  providers:[WPService]
 })
 export class NewsPage {
   counter:number;
@@ -18,14 +18,14 @@ export class NewsPage {
   searchInput:string ="";
   searchBool:boolean = false;
 
-  constructor(public navCtrl: NavController, public newsService:NewsService, private keyboard:Keyboard) {
+  constructor(public navCtrl: NavController, public wpService:WPService, private keyboard:Keyboard) {
     this.resetNews();
     keyboard.disableScroll(false);
   }
 
   doInfinite(infiniteScroll){
     setTimeout(()=>{
-      this.newsService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data));
+      this.wpService.getNews(this.counter).subscribe(data => this.items= this.items.concat(data));
       this.counter++;
       console.log(this.items);
     },500);
@@ -44,7 +44,7 @@ export class NewsPage {
     console.log(this.searchInput);
     if(this.searchInput!=""){
       this.searchBool = true;
-      this.newsService.searchNews(this.searchInput).subscribe(data => this.items = data)
+      this.wpService.searchNews(this.searchInput).subscribe(data => this.items = data)
     }else {
       this.resetNews();
     }
@@ -53,10 +53,9 @@ export class NewsPage {
 
   resetNews(){
     this.counter=1;
-    this.newsService.getNews(this.counter).subscribe(data => this.items = data);
+    this.wpService.getNews(this.counter).subscribe(data => this.items = data);
     this.counter++;
     this.keyboard.close();
-
   }
 
   closeKB(){

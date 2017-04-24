@@ -10,7 +10,8 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class GameService {
-  url:string = "http://localhost:4200/"
+  //url:string = "http://localhost:4200/"
+  url:string="./assets/mock/";
   constructor(public http: Http) {
     console.log('Hello GameService Provider');
   }

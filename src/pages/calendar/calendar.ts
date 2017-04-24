@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GameService} from "../../providers/game-service";
 import {DateFilterPipe} from "../../pipes/dateFilterPipe";
+import {GameDetail} from "../game-detail/game-detail";
 
 /**
  * Generated class for the CalendarPage page.
@@ -26,6 +27,12 @@ export class CalendarPage {
       this.games = data
     );
   }
-
+  gameSelected(event, item) {
+    console.log(item);
+    console.log("gameSelected");
+    this.navCtrl.push(GameDetail, {
+      item: item
+    });
+  }
 
 }
